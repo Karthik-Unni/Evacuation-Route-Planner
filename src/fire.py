@@ -3,7 +3,7 @@ from .utils import DIRS
 
 def spread_fire(fire_grid):
     rows, cols = fire_grid.shape
-    new_fire = fire_grid.copy()
+    
 
     for r in range(rows):
         for c in range(cols):

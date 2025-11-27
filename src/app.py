@@ -40,7 +40,7 @@ class FireEvacController:
             messagebox.showerror("Error", "Select Start and Goal points.")
             return
 
-        fire_spread = spread_fire(self.fire)
+        fire_spread = spread_fire(self.fire.copy())
         path = astar(self.grid.copy(), fire_spread, self.start, self.goal)
 
         if path is None:
