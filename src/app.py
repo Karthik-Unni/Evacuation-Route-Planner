@@ -41,7 +41,7 @@ class FireEvacController:
             return
 
         fire_spread = spread_fire(self.fire)
-        path = astar(self.grid, fire_spread, self.start, self.goal)
+        path = astar(self.grid.copy(), fire_spread, self.start, self.goal)
 
         if path is None:
             messagebox.showerror("No Path", "No safe evacuation path found.")
@@ -53,7 +53,6 @@ class FireEvacController:
     def clear_path(self):
         self.path = []
         self.gui.draw()
-
     def clear_all(self):
         self.grid[:] = 0
         self.fire[:] = 0
@@ -61,3 +60,4 @@ class FireEvacController:
         self.goal = None
         self.path = []
         self.gui.draw()
+
